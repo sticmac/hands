@@ -1,0 +1,25 @@
+{
+  "name": "hands",
+  "version": "1.0.0",
+  "description": "Know when one of the participants raise their hand",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm run clean && ./node_modules/typescript/bin/tsc && node node_modules/copyfiles/copyfiles package.json ./lib && node node_modules/copyfiles/copyfiles production.env ./lib",
+    "clean": "node node_modules/rimraf/bin lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sticmac",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "nodemon": "^2.0.16",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.6.4"
+  }
+}
