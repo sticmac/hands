@@ -5,10 +5,11 @@
   "main": "lib/index.js",
   "scripts": {
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
-    "build": "tsc && node node_modules/copyfiles/copyfiles views/* lib",
+    "build": "tsc && node node_modules/copyfiles/copyfiles src/views/* lib",
     "prestart": "npm run build",
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.ts"
   },
   "author": "sticmac",
   "license": "ISC",
