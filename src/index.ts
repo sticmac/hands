@@ -28,7 +28,7 @@ io.on('connection', (socket) => {
     });
     // recieve hand message
     socket.on('hand', (username) => {
-        console.log(username);
+        io.emit('hand', username);
     })
 });
 
