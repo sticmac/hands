@@ -1,6 +1,6 @@
 {
   "name": "hands",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Know when one of the participants raise their hand",
   "main": "lib/index.js",
   "scripts": {
