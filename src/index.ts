@@ -15,17 +15,13 @@ const io = new Server(server);
 app.set("views", path.join( __dirname, "views"));
 app.set("view engine", "ejs");
 
-const router = express.Router();
-
-router.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // define a route handler for the default home page
-router.get( "/", ( req, res ) => {
+app.get( "/", ( req, res ) => {
     // render the index template
-    res.render( "index" );
+    res.render( "index", {subPath: subPath} );
 } );
-
-app.use(`/${subPath}`, router);
 
 io.on('connection', (socket) => {
     console.log('a user connected');
