@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { Server } from "socket.io";
 import http from "http";
+import { v4 as uuidv4 } from "uuid";
 
 const subPath = process.env.SUB_PATH || '';
 
@@ -29,10 +30,16 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
-    // recieve hand message
+
+    // receive hand message
     socket.on('hand', (username) => {
-        io.emit('hand', username);
+        io.emit('hand', {id: uuidv4(), username: username});
     })
+
+    // receive hand message deletion
+    socket.on('hand-delete', (id) => {
+        io.emit('hand-delete', id);
+    });
 });
 
 // start the express server

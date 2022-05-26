@@ -11,7 +11,7 @@ class HandListElement extends HTMLLIElement {
         this.appendChild(this.deleteButton);
 
         this.deleteButton.addEventListener("click", (e) => {
-            this.remove();
+            removeHandListElement(this.id);
         })
     }
 
