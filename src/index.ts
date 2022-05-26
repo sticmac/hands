@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // define a route handler for the default home page
 app.get( "/", ( req, res ) => {
     // render the index template
-    res.render( "index", {subPath: subPath} );
+    res.render( "index", {subPath} );
 } );
 
 io.on('connection', (socket) => {
