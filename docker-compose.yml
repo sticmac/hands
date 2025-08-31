@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  hands:
+    build: .
+    container_name: hands
+    restart: unless-stopped
